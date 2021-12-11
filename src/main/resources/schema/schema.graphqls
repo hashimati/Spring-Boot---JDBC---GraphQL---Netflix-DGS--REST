@@ -1,0 +1,21 @@
+type Fruit{
+    id: Int!
+    name: String!
+}
+input FruitInput{
+    id: Int
+    name: String!
+}
+type Query{
+
+    findById(id: Int): Fruit
+    existsById(id: Int): Boolean
+    findAll: [Fruit]
+}
+type Mutation{
+    deleteById(id: Int!): Boolean
+    update(fruit: FruitInput!): Fruit
+    save(fruit: FruitInput!): Fruit
+
+
+}
